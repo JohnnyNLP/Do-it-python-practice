@@ -16,3 +16,14 @@ Honestly it's a bit embarrassing that I have to start all over again from the ve
 But what can I say? It's better to have a solid base than just following fancy curriculums that I don't even understand. What I can do is though that I can practice book faster than others, with a tiny bit of my previous experience.
 
 So my plan is to proceed with at least 1~2 chapters a week, or more if possible. See what I can do!
+
+
+
+## 3. What I use in this course...
+
+All the codes and files that I use here belong to Aegis Publishing (이지스퍼블리싱) and the purpose of this repository is solely on practicing python. Those are programs and languages that I use:
+
+- IDLE Python 3.8
+- Notepad ++ 8.3.1
+- Typora
+
