@@ -70,3 +70,14 @@ print(re.split(r';', data))
 for i in re.split(r';', data):
     ### returns [a:1, b:2, c:3]
     print(re.split(r':', i))
+gg()
+### sub method
+### re.sub('pattern', 'substitution', 'string')
+print(re.sub('LOL', 'Warcraft', example2))
+example3 = 'I wanna\n\nsleep in tomorrow.\n\n\n\nBut I gotta work...'
+print(example3)
+print(re.sub('\n','',example3))
+gg()
+
+example4 = 'Usually the words that end with ''ly'' is adverb. But friendly and lovely are adjectives.'
+print(re.findall(r'\S+ly', example4))
