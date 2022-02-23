@@ -3,7 +3,7 @@ def gg():
     
 import re
 
-example = "Johnny said movies can only be either interesting or bad, and there's nothing like in between. (Johnny, 2022)"
+example = "Movies can only be either interesting or bad(Johnny, 2022). Oh, at last(Johnny, 2023)!"
 result = re.findall(r'\([A-Za-z가-힣]+, \d+\)', example)
 print(result)
 gg()
@@ -42,3 +42,31 @@ def refinder(pattern, script):
     else:
         print('Not a Match!')
 refinder(pattern, script)
+gg()
+
+### findall method
+### re.findall('pattern', 'target string')
+### returns results in []
+number = 'My favorite numbers are 12523.12 and 623416.23 and 23534.70'
+print(re.findall('\d{5}', number))
+gg()
+
+### comma in regular expressions means all
+### to stop at certain point, add a question mark
+example1 = 'I was born in Seoul in 1996. And my military service ends in 2023.'
+print(re.findall(r'in+\s\d.+\.', example1))
+print(re.findall(r'in+\s\d.+?\.', example1))
+print(re.findall(r'\(.+\)', example))
+print(re.findall(r'\(.+?\)', example))
+gg()
+
+### split method
+### re.split('pattern', 'string')
+example2 = 'Today I lost two games of LOL in a row. What kind of jerks are playing this game? I can\'t believe this is happening to me!'
+print(re.split(r'[.!?]', example2))
+data = 'a:1; b:2; c:3'
+
+print(re.split(r';', data))
+for i in re.split(r';', data):
+    ### returns [a:1, b:2, c:3]
+    print(re.split(r':', i))
