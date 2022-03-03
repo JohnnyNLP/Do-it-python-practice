@@ -65,4 +65,22 @@ f.write(monica_except_directions)
 f.close()
 gg()
 
+# Can I find sentences that include a certain word?
+# Every line starts with 'character: ' and the sentence should include a certain word, let's say 'would'
+with open('friends101.txt', 'r') as f:
+    sentences = f.readlines()
+    lines_with_would = ''
+    for i in sentences:
+        if re.match(r'[A-Za-z]+:', i):
+            if re.search('would', i):
+                lines_with_would += i
+    print(lines_with_would)
+    
+    # to make it even simpler
+    lines_with_would = [i for i in sentences if re.match(r'[A-Za-z]+:', i) and re.search('would', i)]
+    for i in lines_with_would:
+        print(i)
+    with open('would.txt', 'w') as newf:
+        newf.writelines(lines_with_would)         
+    
 
