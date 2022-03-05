@@ -1,10 +1,6 @@
 count = 1
-def gg():
+def gg(title):
     global count
-    print(count, ": ****************************")
+    print('********* ', count,'. ',title," : ****************************")
     count += 1
     return count
-
-gg()
-gg()
-gg()
