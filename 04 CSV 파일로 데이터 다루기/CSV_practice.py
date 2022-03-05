@@ -36,3 +36,23 @@ def opencsv(filename):
     return output
 
 print(opencsv('a.csv'))
+
+title('write csv')
+a= [['district', 'total population', 'residents', 'foreingers'],
+['Gwanak-gu', '519864', '502089', '17775'],
+['Gangnam-gu', '547602', '542498', '5104'],
+['Songpa-gu', '686181', '679247', '6934'],
+['Gangdong-gu', '428547', '424235', '4312']]
+
+f = open('abc.csv', 'w', newline='')
+csvobject=csv.writer(f, delimiter =',')
+csvobject.writerows(a)
+f.close()
+
+title('def writecsv')
+def writecsv(filename, the_list):
+    with open(filename, 'w', newline = '') as f:
+        a = csv.writer(f, delimiter = ',')
+        a.writerows(the_list)
+        
+writecsv('def.csv', a)
