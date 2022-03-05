@@ -19,7 +19,7 @@ def switch(listName):
         for j in i :
             try :
                 i[i.index(j)] = (float(re.sub(',','',j)))
-            else :
+            except :
                 pass
     return listName
     
