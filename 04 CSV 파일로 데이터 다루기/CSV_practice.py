@@ -56,3 +56,43 @@ def writecsv(filename, the_list):
         a.writerows(the_list)
         
 writecsv('def.csv', a)
+
+title('csv number process')
+import re, usecsv
+os.chdir(r'C:\Users\user\Desktop\파이썬\Do-it-Python\Do-it-python-practice\04 CSV 파일로 데이터 다루기')
+total = usecsv.opencsv('popSeoul.csv')
+for i in total [:5]:
+    print(i)
+    
+title('number conversion to float')
+k=[]
+for i in total:
+    for j in i:
+        if re.search('\d', j):
+            k.append(float(re.sub(',','',j)))
+        else:
+            k.append(j)
+print(k)
+
+title('converting even without k')
+print(total)
+for i in total:
+    for j in i:
+        if re.search('[A-Za-z]', j):
+            i[i.index(j)] = j
+        else:
+            i[i.index(j)] = (float(re.sub(',', '', j)))
+print(total)
+
+title('using try-except to prevent errors')
+total[1][1] = '9,740,398!'
+total[1][2] = '285,529명'
+total[1][3] = '1,498,146s'
+for i in total:
+    for j in i:
+        try:
+            i[i.index(j)] = (float(re.sub(',', '', j)))
+        # if error happens here, i[i.index(j)] has characters that are not numbers
+        except:
+            pass
+print(total)
